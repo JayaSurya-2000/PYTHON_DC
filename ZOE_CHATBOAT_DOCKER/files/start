@@ -1,0 +1,4 @@
+cd /opt/python/repos/zoe-chatboat/
+python setup.py develop
+cd /
+exec supervisord -n -c /etc/supervisor/supervisord.conf

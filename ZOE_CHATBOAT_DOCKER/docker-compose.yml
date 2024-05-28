@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+    zoe-chatboat:
+        container_name: zoe-chatboat
+        env_file: 
+            - .env
+        build:
+            context: .
+            args:
+                PYPI_REPO_URL: "${PYPI_REPO_URL}"
+                PYPI_REPO_URL_HOST: "${PYPI_REPO_URL_HOST}"
+                API_VERSION: "${API_VERSION}"
+
+        hostname: zoe-chatboat
+        ports: 
+            - 8888:80
+        image: zoe-chatboat-img:latest
+        networks:
+            - zoe-chatboat-nt
+
+networks:
+    zoe-chatboat-nt:
+        driver: bridge
+        

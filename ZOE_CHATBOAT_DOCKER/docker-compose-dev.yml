@@ -1,0 +1,26 @@
+version: '2'
+services:
+    zoe-chatboat-DEV:
+        container_name: zoe-chatboat-DEV
+        env_file:
+            - .env
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                PYPI_REPO_URL: "${PYPI_REPO_URL}"
+                PYPI_REPO_URL_HOST: "${PYPI_REPO_URL_HOST}"
+                API_VERSION: "${API_VERSION}"
+
+        hostname: zoe-chatboat-DEV
+        ports:
+            - 9999:80
+        #volumes:
+        #    - ${MP_CODE_LOCATION}:/opt/python/repos/zoe-chatboat
+        image: zoe-chatboat-img-dev:latest
+        networks:
+            - zoe-chatboat-DEV-nt
+
+networks:
+    zoe-chatboat-DEV-nt:
+        driver: bridge

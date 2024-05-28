@@ -1,0 +1,8 @@
+Flask==2.3.2
+Flask-HTTPAuth==4.8.0
+snowflake-connector-python==3.0.4
+passlib==1.7.4
+gunicorn==20.1.0
+simplejson==3.19.1
+boto3==1.28.45
+openai==1.6.1

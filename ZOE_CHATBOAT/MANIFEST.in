@@ -1,0 +1,5 @@
+include versioneer.py
+include zoe-chatboat/_version.py
+include requirements.txt
+include README.md
+include zoe-chatboat/config/db.properties
